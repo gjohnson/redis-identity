@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/gjohnson/sequential-id.png)](https://travis-ci.org/gjohnson/sequential-id)
+[![Build Status](https://travis-ci.org/gjohnson/redis-sequential-id.png)](https://travis-ci.org/gjohnson/redis-sequential-id)
 
 # redis-sequential-id
 
