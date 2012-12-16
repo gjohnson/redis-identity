@@ -17,7 +17,7 @@ Pass in a node-redis client, and an optional key to use for the id mappings. The
 ```javascript
 var redis = require('redis')
   , client = redis.createClient()
-  , identity = require('identity')(client);
+  , identity = require('redis-sequential-id')(client);
 
 identity('xxx-123-456', function(err, id){
   // ...
@@ -28,7 +28,7 @@ identity('xxx-123-456', function(err, id){
 ```javascript
 var redis = require('redis')
   , client = redis.createClient()
-  , identity = require('identity')(client, 'my-id-map');
+  , identity = require('redis-sequential-id')(client, 'my-id-map');
 
 identity('xxx-123-456', function(err, id){
   // ...
