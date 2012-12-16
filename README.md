@@ -1,23 +1,23 @@
-[![Build Status](https://travis-ci.org/gjohnson/redis-sequential-id.png)](https://travis-ci.org/gjohnson/redis-sequential-id)
+[![Build Status](https://travis-ci.org/gjohnson/redis-identity.png)](https://travis-ci.org/gjohnson/redis-identity)
 
-# redis-sequential-id
+# redis-identity
 
 Redis script for mapping external ID's to sequential ones. Adapted from [crashlytics](http://www.slideshare.net/crashlytics/crashlytics-on-redis-analytics).
 
 ## Install
 
 ```shell
-$ npm install redis-sequential-id
+$ npm install redis-identity
 ```
 
 ## Usage
 
-Pass in a node-redis client, and an optional key to use for the id mappings. The key will default to `idendity-map`.
+Pass in a node-redis client, and an optional key to use for the id mappings. The key will default to `identity-map`.
 
 ```javascript
 var redis = require('redis')
   , client = redis.createClient()
-  , identity = require('redis-sequential-id')(client);
+  , identity = require('redis-identity')(client);
 
 identity('xxx-123-456', function(err, id){
   // ...
@@ -28,7 +28,7 @@ identity('xxx-123-456', function(err, id){
 ```javascript
 var redis = require('redis')
   , client = redis.createClient()
-  , identity = require('redis-sequential-id')(client, 'my-id-map');
+  , identity = require('redis-identity')(client, 'my-id-map');
 
 identity('xxx-123-456', function(err, id){
   // ...

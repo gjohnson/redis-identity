@@ -1,5 +1,5 @@
 {
-  "name": "redis-sequential-id",
+  "name": "redis-identity",
   "version": "0.0.2",
   "description": "maps external id's into sequential id's",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:gjohnson/redis-sequential-id"
+    "url": "git@github.com:gjohnson/redis-identity.git"
   },
   "keywords": [
     "redis",
