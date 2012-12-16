@@ -1,6 +1,6 @@
 {
   "name": "redis-sequential-id",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "maps external id's into sequential id's",
   "main": "index.js",
   "directories": {
