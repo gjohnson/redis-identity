@@ -1,0 +1,29 @@
+{
+  "name": "redis-sequential-id",
+  "version": "0.0.1",
+  "description": "maps external id's into sequential id's",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gjohnson/redis-sequential-id"
+  },
+  "keywords": [
+    "redis",
+    "evalsha",
+    "redis-script"
+  ],
+  "author": "Garrett Johnson",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "redis": "*",
+    "mocha": "*",
+    "should": "*"
+  }
+}
