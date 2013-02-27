@@ -1,6 +1,6 @@
 {
   "name": "redis-identity",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "maps external id's into sequential id's",
   "main": "index.js",
   "directories": {
@@ -21,6 +21,9 @@
   "author": "Garrett Johnson",
   "license": "MIT",
   "readmeFilename": "README.md",
+  "peerDependencies": {
+    "redis": "~0.8.2"
+  },
   "devDependencies": {
     "redis": "*",
     "mocha": "*",

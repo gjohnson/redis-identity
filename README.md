@@ -1,18 +1,17 @@
-[![Build Status](https://travis-ci.org/gjohnson/redis-identity.png)](https://travis-ci.org/gjohnson/redis-identity)
 
 # redis-identity
 
 Redis script for mapping external ID's to sequential ones. Adapted from [crashlytics](http://www.slideshare.net/crashlytics/crashlytics-on-redis-analytics).
 
-## Install
+## install
 
 ```shell
 $ npm install redis-identity
 ```
 
-## Usage
+## usage
 
-Pass in a node-redis client, and an optional key to use for the id mappings. The key will default to `identity-map`.
+Pass in a node-redis client, and an optional key to use for the id mappings. 
 
 ```javascript
 var redis = require('redis')
@@ -24,6 +23,7 @@ identity('xxx-123-456', function(err, id){
 });
 ```
 
+The second argument is the optional for the mapping, it defaults to `identity-map`.
 
 ```javascript
 var redis = require('redis')
@@ -35,10 +35,10 @@ identity('xxx-123-456', function(err, id){
 });
 ```
 
-## TODO
+## notes
 
-  - script loading/caching with evalsha? not sure the upsides/downsides yet.
+  - this will only work with node_redis >= 0.8.2.
 
-## License
+## license
 
 MIT
