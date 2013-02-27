@@ -33,7 +33,7 @@ describe('identity', function(){
 function get(id, expected, done){
   identity(id, function(err, id){
     should.not.exist(err);
-    id.should.equal(String(expected));
+    id.should.equal((expected));
     done && done();
   });
 }

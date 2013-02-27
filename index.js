@@ -17,6 +17,13 @@ var script = '\
 
 /**
  * Expose.
+ */
+
+module.exports = identity;
+
+/*
+ * Identity mapper where the id's are generated
+ * via the lua `script`.
  *
  * @api public
  * @param {RedisClient} client
@@ -24,11 +31,33 @@ var script = '\
  * @return {Function}
  */
 
-module.exports = function(client, key){
+function identity(client, key){
   key = key || 'identity-map';
+  var cache = null;
+
   return function(id, cb){
-    var args = [script, 1, key, id];
     if (id == null) return cb(new Error('id is required'));
-    client.send_command('eval', args, cb);
+
+    if (!cache) {
+      scriptload();
+    } else {
+      evalsha();
+    }
+
+    function scriptload(){
+      client.send_command('SCRIPT', ['LOAD', script], function(err, sha1){
+        if (err) return cb(err);
+        cache = sha1;
+        evalsha();
+      });
+    }
+
+    function evalsha(){
+      client.evalsha([cache, 1, key, id], function(err, res){
+        if (err) return cb(err);
+        cb(null, parseInt(res, 10));
+      });
+    }
   };
-};
+}
+
